@@ -1,0 +1,16 @@
+version: "3"
+services:
+  wanswiev-ReStream:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: wanswiev-ReStream
+    environment:
+      - CAMERA_IP=10.10.0.44
+      - CAMERA_USER_NAME=admin
+      - CAMERA_USER_PASS=123456
+      - PTZ_1=31&onestep=0&sit=31&17062865540080.5238427280103255&_=1706286554008
+      - PTZ_2=33&onestep=0&sit=33&17062865331300.5001876041888236&_=1706286533130
+    ports:
+      - "9128:5000"
+    restart: always
